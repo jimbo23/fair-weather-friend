@@ -60,20 +60,25 @@ CurrentWeather.Error = ({
 }) => {
   const navigate = useNavigate();
 
+  if ('status' in error && error.status === 404)
+    return (
+      <div className="flex flex-col gap-3 text-sm mb-3">
+        <p className="bg-red-500/40 w-fit capitalize border-solid border-red-700 rounded-lg p-2">
+          Error: City not found!
+        </p>
+        <p>Go back to previous search?</p>
+        <button
+          className="bg-purple-600 w-fit p-2 rounded-lg text-white"
+          onClick={() => navigate(-1)}
+        >
+          Click me
+        </button>
+      </div>
+    );
+
   return (
-    <div className="flex flex-col gap-3 text-sm mb-3">
-      <p className="bg-red-500/40 w-fit capitalize border-solid border-red-700 rounded-lg p-2">
-        Error: {error?.data?.message}
-      </p>
-      <p>Go back to previous search?</p>
-      <button
-        className="bg-purple-600 w-fit p-2 rounded-lg text-white"
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        Click me
-      </button>
-    </div>
+    <span className="text-red-500">
+      Something went wrong! Please try again later
+    </span>
   );
 };
