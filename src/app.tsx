@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { CurrentWeather } from './components/current-weather';
+import { SearchBox } from './components/search-box';
+import { SearchHistory } from './components/search-history';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export const App = () => (
+  <div className="bg-[url('./assets/bg-light.png')] min-h-screen bg-center">
+    <main className="flex flex-col items-center max-w-sm md:max-w-2xl mx-auto gap-16 pt-3 md:pt-6 pb-10 w-[90%]">
+      <SearchBox />
+      <section className="bg-white/30 shadow-lg p-4 md:p-8 rounded-3xl w-full flex flex-col justify-center relative ">
+        <img
+          src="../public/assets/sun.png"
+          className="h-36 w:36 md:h-48 md:w-48 absolute right-3 -top-12"
+          alt="weather-icon"
+        />
+        <CurrentWeather />
+        <SearchHistory />
+      </section>
+    </main>
+  </div>
+);
