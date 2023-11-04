@@ -1,9 +1,9 @@
-import { Delete, Search, Trash2 } from 'lucide-react';
+import { Search, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { getFormattedDateTimeString } from '../utils/get-formatted-date-time-string';
 import { useAppDispatch } from '../redux/hooks';
 import { removeFromSearchHistory } from '../redux/search-history-slice';
 import { SearchHistoryType } from '../types';
+import { getFormattedDateTimeString } from '../utils/get-formatted-date-time-string';
 
 type SearchHistoryItemProps = { record: SearchHistoryType };
 
