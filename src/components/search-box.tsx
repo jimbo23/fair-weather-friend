@@ -22,6 +22,7 @@ export const SearchBox = () => {
       <input
         className="w-full px-3 rounded-lg md:rounded-2xl bg-white/20 focus-visible:outline-none focus:bg-white/30 text-sm md:text-md"
         type="search"
+        defaultValue={searchText}
         value={searchText}
         autoCapitalize="words"
         autoComplete="on"
