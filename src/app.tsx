@@ -8,6 +8,7 @@ export const App = () => (
       <SearchBox />
       <section className="bg-white/30 shadow-lg p-4 md:p-8 rounded-3xl w-full flex flex-col justify-center relative ">
         <img
+          fetchpriority="high"
           src="/sun.png"
           className="h-36 w:36 md:h-48 md:w-48 absolute right-3 -top-12"
           alt="weather-icon"
