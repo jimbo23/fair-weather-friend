@@ -1,4 +1,4 @@
-import { Delete, Search } from 'lucide-react';
+import { Delete, Search, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { getFormattedDateTimeString } from '../utils/get-formatted-date-time-string';
 import { useAppDispatch } from '../redux/hooks';
@@ -33,7 +33,7 @@ export const SearchHistoryItem = ({ record }: SearchHistoryItemProps) => {
           className="rounded-[50%] bg-white p-2"
           onClick={() => dispatch(removeFromSearchHistory({ id: record.id }))}
         >
-          <Delete className="h-4 w-4" />
+          <Trash2 className="h-4 w-4" />
         </button>
       </div>
     </li>
